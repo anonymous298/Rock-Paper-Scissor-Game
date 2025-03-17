@@ -1,11 +1,18 @@
 let user_counter = 0;
 let computer_counter = 0;
 
+const generateCompChoice = () => {
+    const computer_choices = ['rock', 'paper', 'scissor'];
+    const computer_option = Math.floor(Math.random() * computer_choices.length);
+    const computer_guess = computer_choices[computer_option];
+
+    return computer_guess;
+}
+
 function main(user_choice) {
     
-    const computer_choices = ['rock', 'paper', 'scissor'];
-    let computer_option = Math.floor(Math.random() * computer_choices.length);
-    let computer_guess = computer_choices[computer_option];
+    const computer_guess = generateCompChoice();
+
 
     document.querySelector('#player-move').innerText = user_choice;
     document.querySelector('#comp-move').innerText = computer_guess;
